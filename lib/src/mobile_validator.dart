@@ -23,6 +23,11 @@ class MobileValidator {
 
     //HongKong
     else if (mobile.startsWith('852')) {
+      return mobile.length == 8;
+    }
+
+    //Indonesia
+    else if (mobile.startsWith('62')) {
       return mobile.length == 11;
     }
 
