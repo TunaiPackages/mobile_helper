@@ -31,6 +31,7 @@ class MobileValidator {
       return mobile.length == 11;
     }
 
-    return false;
+    //default
+    return mobile.length > 6;
   }
 }
