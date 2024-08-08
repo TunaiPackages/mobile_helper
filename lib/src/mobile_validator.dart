@@ -31,7 +31,6 @@ class MobileValidator {
       return mobile.length == 11;
     }
 
-    //test is it updating
     //default
     return mobile.length > 6;
   }
