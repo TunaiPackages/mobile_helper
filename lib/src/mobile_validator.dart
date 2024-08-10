@@ -18,17 +18,17 @@ class MobileValidator {
 
     //Brunei
     else if (mobile.startsWith('673')) {
-      return mobile.length == 10;
+      return mobile.length >= 10;
     }
 
     //HongKong
     else if (mobile.startsWith('852')) {
-      return mobile.length == 8;
+      return mobile.length >= 8;
     }
 
     //Indonesia
     else if (mobile.startsWith('62')) {
-      return mobile.length == 11;
+      return mobile.length >= 11 && mobile.length <= 14;
     }
 
     //default
