@@ -4,8 +4,8 @@ class IndonesiaMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     // Regular expression to match Indonesian mobile numbers.
-    // This checks for raw numbers without the '+' symbol.
-    RegExp indonesiaPattern = RegExp(r'^62?8[1-9][0-9]{7,10}$');
+    // This checks for numbers starting with '628' or '08' and followed by 9-12 digits.
+    RegExp indonesiaPattern = RegExp(r'^(?:62|0)8[1-9][0-9]{7,10}$');
 
     return indonesiaPattern.hasMatch(mobile);
   }
