@@ -9,7 +9,7 @@ class HongKongMobileCountry extends MobileCountry {
   }
 
   @override
-  String get code => '+852'; // Hong Kong country code
+  String get code => '852'; // Hong Kong country code
 
   @override
   String formatMobile(String mobile) {
