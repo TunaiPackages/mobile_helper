@@ -1,34 +1,35 @@
+import 'package:mobile_helper/src/mobile_country/base_mobile_country.dart';
+
 class MobileValidator {
   static bool isValid(String mobile) {
     //MY
-    if (mobile.startsWith('60')) {
-      if (mobile.length >= 4) {
-        if (mobile.substring(0, 4) == '6011') {
-          return mobile.length == 12;
-        } else {
-          return mobile.length == 11;
-        }
-      }
+    if (mobile.startsWith(MalaysiaMobileCountry().code)) {
+      return MalaysiaMobileCountry().checkFormat(mobile);
     }
 
     //SG
-    else if (mobile.startsWith('65')) {
-      return mobile.length == 10;
+    else if (mobile.startsWith(SingaporeMobileCountry().code)) {
+      return SingaporeMobileCountry().checkFormat(mobile);
     }
 
     //Brunei
-    else if (mobile.startsWith('673')) {
-      return mobile.length >= 10;
+    else if (mobile.startsWith(BruneiMobileCountry().code)) {
+      return BruneiMobileCountry().checkFormat(mobile);
     }
 
     //HongKong
-    else if (mobile.startsWith('852')) {
-      return mobile.length >= 8;
+    else if (mobile.startsWith(HongKongMobileCountry().code)) {
+      return HongKongMobileCountry().checkFormat(mobile);
     }
 
     //Indonesia
-    else if (mobile.startsWith('62')) {
-      return mobile.length >= 11 && mobile.length <= 14;
+    else if (mobile.startsWith(IndonesiaMobileCountry().code)) {
+      return IndonesiaMobileCountry().checkFormat(mobile);
+    }
+
+    //Philippines
+    else if (mobile.startsWith(PhilippinesMobileCountry().code)) {
+      return PhilippinesMobileCountry().checkFormat(mobile);
     }
 
     //default
