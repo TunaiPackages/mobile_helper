@@ -1,6 +1,6 @@
 part of '../base_mobile_country.dart';
 
-class IndonesiaMobileCountry extends BaseMobileCountry {
+class IndonesiaMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     // Regular expression to match Indonesian mobile numbers.

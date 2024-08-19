@@ -1,6 +1,6 @@
 part of '../base_mobile_country.dart';
 
-class PhilippinesMobileCountry extends BaseMobileCountry {
+class PhilippinesMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     RegExp philippinesPattern = RegExp(r'^(?:\+?63)?9[0-9]{9}$');

@@ -1,6 +1,6 @@
 part of '../base_mobile_country.dart';
 
-class HongKongMobileCountry extends BaseMobileCountry {
+class HongKongMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     // Hong Kong mobile numbers typically start with the country code 852 and are followed by 8 digits that start with 5, 6, or 9

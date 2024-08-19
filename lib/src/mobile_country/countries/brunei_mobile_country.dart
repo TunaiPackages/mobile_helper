@@ -1,6 +1,6 @@
 part of '../base_mobile_country.dart';
 
-class BruneiMobileCountry extends BaseMobileCountry {
+class BruneiMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     // Regular expression to match Brunei mobile numbers.
