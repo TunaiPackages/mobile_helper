@@ -14,10 +14,10 @@ sealed class MobileCountry {
 
 List<MobileCountry> getMobileCountries() {
   return [
-    BruneiMobileCountry(),
-    IndonesiaMobileCountry(),
     MalaysiaMobileCountry(),
     SingaporeMobileCountry(),
+    BruneiMobileCountry(),
+    IndonesiaMobileCountry(),
     PhilippinesMobileCountry(),
     HongKongMobileCountry(),
   ];
