@@ -32,6 +32,16 @@ class MobileValidator {
       return PhilippinesMobileCountry().checkFormat(mobile);
     }
 
+    //India
+    else if (mobile.startsWith(IndiaMobileCountry().code)) {
+      return IndiaMobileCountry().checkFormat(mobile);
+    }
+
+    //Sri Lanka
+    else if (mobile.startsWith(SriLankaMobileCountry().code)) {
+      return SriLankaMobileCountry().checkFormat(mobile);
+    }
+
     //default
     return mobile.length > 6;
   }
