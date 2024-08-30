@@ -5,7 +5,7 @@ class IndiaMobileCountry extends MobileCountry {
   bool checkFormat(String mobile) {
     // Regular expression to match Indian mobile numbers.
     // This checks for numbers starting with '91' or '0' followed by 10 digits.
-    RegExp indiaPattern = RegExp(r'^(?:91|0)?[6-9][0-9]{9}$');
+    RegExp indiaPattern = RegExp(r'^91[6-9][0-9]{9}$');
 
     return indiaPattern.hasMatch(mobile);
   }
