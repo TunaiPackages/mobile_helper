@@ -22,5 +22,7 @@ List<MobileCountry> getMobileCountries() {
     IndonesiaMobileCountry(),
     PhilippinesMobileCountry(),
     HongKongMobileCountry(),
+    IndiaMobileCountry(),
+    SriLankaMobileCountry(),
   ];
 }
