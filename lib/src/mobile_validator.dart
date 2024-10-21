@@ -42,6 +42,16 @@ class MobileValidator {
       return SriLankaMobileCountry().checkFormat(mobile);
     }
 
+    //Thailand
+    else if (mobile.startsWith(ThailandMobileCountry().code)) {
+      return ThailandMobileCountry().checkFormat(mobile);
+    }
+
+    //England
+    else if (mobile.startsWith(EnglandMobileCountry().code)) {
+      return EnglandMobileCountry().checkFormat(mobile);
+    }
+
     //default
     return mobile.length > 6;
   }
