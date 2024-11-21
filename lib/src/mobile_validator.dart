@@ -52,6 +52,11 @@ class MobileValidator {
       return EnglandMobileCountry().checkFormat(mobile);
     }
 
+    //Taiwan
+    else if (mobile.startsWith(TaiwanMobileCountry().code)) {
+      return TaiwanMobileCountry().checkFormat(mobile);
+    }
+
     //default
     return mobile.length > 6;
   }
