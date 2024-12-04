@@ -31,5 +31,6 @@ List<MobileCountry> getMobileCountries() {
     ThailandMobileCountry(),
     EnglandMobileCountry(),
     TaiwanMobileCountry(),
+    OtherMobileCountry(),
   ];
 }
