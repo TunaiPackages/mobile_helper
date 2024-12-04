@@ -9,6 +9,7 @@ part 'countries/sri_lanka_mobile_country.dart';
 part 'countries/thailand_mobile_country.dart';
 part 'countries/england_mobile_country.dart';
 part 'countries/taiwan_mobile_country.dart';
+part 'countries/other_mobile_country.dart';
 
 sealed class MobileCountry {
   String get name;

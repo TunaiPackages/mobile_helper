@@ -1,7 +1,7 @@
 import 'package:mobile_helper/src/mobile_country/base_mobile_country.dart';
 
 class MobileValidator {
-  static MobileCountry? getCountryFromMobile(String mobile) {
+  static MobileCountry getCountryFromMobile(String mobile) {
     //MY
     if (mobile.startsWith(MalaysiaMobileCountry().code)) {
       return MalaysiaMobileCountry();
@@ -57,16 +57,14 @@ class MobileValidator {
       return TaiwanMobileCountry();
     }
 
-    //default
-    return null;
+    //Other
+    else {
+      return OtherMobileCountry();
+    }
   }
 
   static bool isValid(String mobile) {
-    MobileCountry? country = getCountryFromMobile(mobile);
-    if (country != null) {
-      return country.checkFormat(mobile);
-    }
-
-    return mobile.length > 6;
+    MobileCountry country = getCountryFromMobile(mobile);
+    return country.checkFormat(mobile);
   }
 }
