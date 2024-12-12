@@ -1,3 +1,5 @@
+import 'package:equatable/equatable.dart';
+
 part 'countries/brunei_mobile_country.dart';
 part 'countries/indonesia_mobile_country.dart';
 part 'countries/malaysia_mobile_country.dart';
@@ -11,11 +13,14 @@ part 'countries/england_mobile_country.dart';
 part 'countries/taiwan_mobile_country.dart';
 part 'countries/other_mobile_country.dart';
 
-sealed class MobileCountry {
+sealed class MobileCountry extends Equatable {
   String get name;
   String get code;
   bool checkFormat(String mobile);
   String formatMobile(String mobile);
+
+  @override
+  List<Object> get props => [name, code];
 }
 
 List<MobileCountry> getMobileCountries() {
