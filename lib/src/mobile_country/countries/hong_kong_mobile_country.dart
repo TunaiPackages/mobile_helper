@@ -18,7 +18,7 @@ class HongKongMobileCountry extends MobileCountry {
     if (checkFormat(mobile)) {
       return '$code ${mobile.substring(0, 4)} ${mobile.substring(4)}';
     } else {
-      throw FormatException("Invalid Hong Kong mobile number format");
+      return mobile;
     }
   }
 
