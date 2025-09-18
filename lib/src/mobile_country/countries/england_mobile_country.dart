@@ -35,7 +35,12 @@ class EnglandMobileCountry extends MobileCountry {
       int startIndex = cleanMobile.startsWith('44')
           ? 2
           : 1; // If it starts with +44, start formatting from 2nd digit
-      String subscriberCode = cleanMobile.substring(startIndex, startIndex + 3);
+
+      // Ensure we don't exceed the string length when extracting subscriber code
+      int subscriberCodeEnd =
+          (startIndex + 3).clamp(startIndex, cleanMobile.length);
+      String subscriberCode =
+          cleanMobile.substring(startIndex, subscriberCodeEnd);
       formattedMobile += ' $subscriberCode';
 
       if (cleanMobile.length > startIndex + 3) {
