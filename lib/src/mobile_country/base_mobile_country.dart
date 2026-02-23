@@ -9,6 +9,7 @@ part 'countries/hong_kong_mobile_country.dart';
 part 'countries/india_mobile_country.dart';
 part 'countries/sri_lanka_mobile_country.dart';
 part 'countries/thailand_mobile_country.dart';
+part 'countries/china_mobile_country.dart';
 part 'countries/england_mobile_country.dart';
 part 'countries/taiwan_mobile_country.dart';
 part 'countries/other_mobile_country.dart';
@@ -34,6 +35,7 @@ List<MobileCountry> getMobileCountries() {
     IndiaMobileCountry(),
     SriLankaMobileCountry(),
     ThailandMobileCountry(),
+    ChinaMobileCountry(),
     EnglandMobileCountry(),
     TaiwanMobileCountry(),
     OtherMobileCountry(),
