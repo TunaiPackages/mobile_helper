@@ -38,6 +38,7 @@ List<MobileCountry> getMobileCountries() {
     ChinaMobileCountry(),
     EnglandMobileCountry(),
     TaiwanMobileCountry(),
+    ChinaMobileCountry(),
     OtherMobileCountry(),
   ];
 }

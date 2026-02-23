@@ -57,6 +57,11 @@ class MobileValidator {
       return TaiwanMobileCountry();
     }
 
+    //China
+    else if (mobile.startsWith(ChinaMobileCountry().code)) {
+      return ChinaMobileCountry();
+    }
+
     //Other
     else {
       return OtherMobileCountry();
