@@ -7,11 +7,11 @@ class BruneiMobileCountry extends MobileCountry {
     // This checks for raw numbers without the '+' symbol.
 
     // Test expectations in this repo treat valid Brunei mobile numbers as:
-    // - local: `7` followed by 6 digits (7 digits total)
-    // - with country code: `673` + `7` followed by 6 digits (10 digits total)
-    RegExp bruneiPattern = RegExp(r'^(?:673)?7[0-9]{6}$');
+    // - local: `7` or `8` followed by 6 digits (7 digits total)
+    // - with country code: `673` + (`7` or `8`) followed by 6 digits
+    RegExp bruneiPattern = RegExp(r'^(?:673)?[78][0-9]{6}$');
 
-    // Brunei mobile numbers typically start with '7' and are 7 digits long.
+    // Brunei mobile numbers typically start with '7' or '8' and are 7 digits long.
     return bruneiPattern.hasMatch(mobile);
   }
 
@@ -24,9 +24,9 @@ class BruneiMobileCountry extends MobileCountry {
     mobile = mobile.replaceAll(RegExp(r'\D'), '');
 
     // Ensure the number starts with the correct country code
-    if (mobile.startsWith('7')) {
+    if (mobile.startsWith('7') || mobile.startsWith('8')) {
       // Local format, prepend '673'
-      mobile = '673' + mobile;
+      mobile = '673$mobile';
     } else if (mobile.startsWith('673')) {
       // Already in the correct format
     } else {
