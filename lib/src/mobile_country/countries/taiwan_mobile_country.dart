@@ -49,4 +49,7 @@ class TaiwanMobileCountry extends MobileCountry {
 
   @override
   String get name => 'Taiwan';
+
+  @override
+  String get flagAssetName => 'tw.png';
 }

@@ -35,4 +35,7 @@ class IndiaMobileCountry extends MobileCountry {
 
   @override
   String get name => 'India';
+
+  @override
+  String get flagAssetName => 'in.png';
 }

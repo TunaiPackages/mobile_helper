@@ -57,4 +57,7 @@ class MalaysiaMobileCountry extends MobileCountry {
 
   @override
   String get name => 'Malaysia';
+
+  @override
+  String get flagAssetName => 'my.png';
 }

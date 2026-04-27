@@ -53,4 +53,7 @@ class SingaporeMobileCountry extends MobileCountry {
 
   @override
   String get name => 'Singapore';
+
+  @override
+  String get flagAssetName => 'sg.png';
 }

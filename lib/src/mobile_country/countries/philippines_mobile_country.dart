@@ -38,4 +38,7 @@ class PhilippinesMobileCountry extends MobileCountry {
 
   @override
   String get name => 'Philippines';
+
+  @override
+  String get flagAssetName => 'ph.png';
 }

@@ -49,4 +49,7 @@ class ThailandMobileCountry extends MobileCountry {
 
   @override
   String get name => 'Thailand';
+
+  @override
+  String get flagAssetName => 'th.png';
 }

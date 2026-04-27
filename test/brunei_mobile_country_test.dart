@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mobile_helper/mobile_helper.dart';
+import 'package:mobile_helper/src/mobile_country/base_mobile_country.dart';
 
 void main() {
   late BruneiMobileCountry bruneiMobileCountry;

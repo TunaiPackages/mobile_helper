@@ -50,4 +50,7 @@ class ChinaMobileCountry extends MobileCountry {
 
   @override
   String get name => 'China';
+
+  @override
+  String get flagAssetName => 'cn.png';
 }

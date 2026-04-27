@@ -1,75 +1,28 @@
 import 'package:mobile_helper/src/mobile_country/base_mobile_country.dart';
 
 class MobileValidator {
+  static final MobileCountry _fallbackCountry = getMobileCountries().firstWhere(
+    (country) => country.code.isEmpty,
+    orElse: OtherMobileCountry.new,
+  );
+
+  static final List<MobileCountry> _countriesByCodeLengthDesc =
+      getMobileCountries()
+          .where((country) => country.code.isNotEmpty)
+          .toList()
+        ..sort((a, b) => b.code.length.compareTo(a.code.length));
+
   static MobileCountry getCountryFromMobile(String mobile) {
-    //MY
-    if (mobile.startsWith(MalaysiaMobileCountry().code)) {
-      return MalaysiaMobileCountry();
+    for (final country in _countriesByCodeLengthDesc) {
+      if (mobile.startsWith(country.code)) {
+        return country;
+      }
     }
-
-    //SG
-    else if (mobile.startsWith(SingaporeMobileCountry().code)) {
-      return SingaporeMobileCountry();
-    }
-
-    //Brunei
-    else if (mobile.startsWith(BruneiMobileCountry().code)) {
-      return BruneiMobileCountry();
-    }
-
-    //HongKong
-    else if (mobile.startsWith(HongKongMobileCountry().code)) {
-      return HongKongMobileCountry();
-    }
-
-    //Indonesia
-    else if (mobile.startsWith(IndonesiaMobileCountry().code)) {
-      return IndonesiaMobileCountry();
-    }
-
-    //Philippines
-    else if (mobile.startsWith(PhilippinesMobileCountry().code)) {
-      return PhilippinesMobileCountry();
-    }
-
-    //India
-    else if (mobile.startsWith(IndiaMobileCountry().code)) {
-      return IndiaMobileCountry();
-    }
-
-    //Sri Lanka
-    else if (mobile.startsWith(SriLankaMobileCountry().code)) {
-      return SriLankaMobileCountry();
-    }
-
-    //Thailand
-    else if (mobile.startsWith(ThailandMobileCountry().code)) {
-      return ThailandMobileCountry();
-    }
-
-    //England
-    else if (mobile.startsWith(EnglandMobileCountry().code)) {
-      return EnglandMobileCountry();
-    }
-
-    //Taiwan
-    else if (mobile.startsWith(TaiwanMobileCountry().code)) {
-      return TaiwanMobileCountry();
-    }
-
-    //China
-    else if (mobile.startsWith(ChinaMobileCountry().code)) {
-      return ChinaMobileCountry();
-    }
-
-    //Other
-    else {
-      return OtherMobileCountry();
-    }
+    return _fallbackCountry;
   }
 
   static bool isValid(String mobile) {
-    MobileCountry country = getCountryFromMobile(mobile);
+    final country = getCountryFromMobile(mobile);
     return country.checkFormat(mobile);
   }
 }

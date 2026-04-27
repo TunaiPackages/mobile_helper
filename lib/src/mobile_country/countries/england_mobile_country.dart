@@ -56,4 +56,7 @@ class EnglandMobileCountry extends MobileCountry {
 
   @override
   String get name => 'England';
+
+  @override
+  String get flagAssetName => 'gb.png';
 }

@@ -28,4 +28,7 @@ class HongKongMobileCountry extends MobileCountry {
 
   @override
   String get name => 'Hong Kong'; // Name of the country
+
+  @override
+  String get flagAssetName => 'hk.png';
 }

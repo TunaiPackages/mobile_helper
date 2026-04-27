@@ -40,4 +40,7 @@ class BruneiMobileCountry extends MobileCountry {
 
   @override
   String get name => 'Brunei';
+
+  @override
+  String get flagAssetName => 'bn.png';
 }

@@ -35,4 +35,7 @@ class SriLankaMobileCountry extends MobileCountry {
 
   @override
   String get name => 'Sri Lanka';
+
+  @override
+  String get flagAssetName => 'lk.png';
 }

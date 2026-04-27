@@ -35,4 +35,7 @@ class IndonesiaMobileCountry extends MobileCountry {
 
   @override
   String get name => 'Indonesia';
+
+  @override
+  String get flagAssetName => 'id.png';
 }
