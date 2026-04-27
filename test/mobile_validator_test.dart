@@ -10,6 +10,10 @@ void main() {
         isA<MalaysiaMobileCountry>(),
       );
       expect(
+        MobileValidator.getCountryFromMobile('263771234567'),
+        isA<ZimbabweMobileCountry>(),
+      );
+      expect(
         MobileValidator.getCountryFromMobile('447123456789'),
         isA<EnglandMobileCountry>(),
       );
@@ -22,6 +26,8 @@ void main() {
     test('isValid delegates to matched country format check', () {
       expect(MobileValidator.isValid('66812345678'), isTrue);
       expect(MobileValidator.isValid('6612345678'), isFalse);
+      expect(MobileValidator.isValid('263771234567'), isTrue);
+      expect(MobileValidator.isValid('26377123456'), isFalse);
     });
   });
 
