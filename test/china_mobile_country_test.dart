@@ -4,7 +4,7 @@ import 'package:mobile_helper/src/mobile_country/base_mobile_country.dart';
 void main() {
   group('ChinaMobileCountry Tests', () {
     // Create an instance of the ChinaMobileCountry
-    final chinaMobileCountry = ChinaMobileCountry();
+    final chinaMobileCountry = ChinaMobileCountry.instance;
 
     test('Check valid China mobile number format', () {
       expect(chinaMobileCountry.checkFormat('8613812345678'), isTrue);
@@ -17,15 +17,15 @@ void main() {
       // Wrong country code
       expect(chinaMobileCountry.checkFormat('6612345678'), isFalse);
       expect(chinaMobileCountry.checkFormat('1234567890'), isFalse);
-      
+
       // Wrong length
       expect(chinaMobileCountry.checkFormat('861234567'), isFalse);
       expect(chinaMobileCountry.checkFormat('86123456789012'), isFalse);
-      
+
       // Wrong mobile prefix (first digit after 86 must be 1)
       expect(chinaMobileCountry.checkFormat('8623456789012'), isFalse);
       expect(chinaMobileCountry.checkFormat('8603456789012'), isFalse);
-      
+
       // Wrong second digit (must be 3-9)
       expect(chinaMobileCountry.checkFormat('8610123456789'), isFalse);
       expect(chinaMobileCountry.checkFormat('8611123456789'), isFalse);
@@ -33,10 +33,10 @@ void main() {
     });
 
     test('Format China mobile number', () {
-      expect(
-          chinaMobileCountry.formatMobile('8613812345678'), '(86) 138-12345678');
-      expect(
-          chinaMobileCountry.formatMobile('8615987654321'), '(86) 159-87654321');
+      expect(chinaMobileCountry.formatMobile('8613812345678'),
+          '(86) 138-12345678');
+      expect(chinaMobileCountry.formatMobile('8615987654321'),
+          '(86) 159-87654321');
     });
 
     test('Format China mobile number with different lengths', () {
@@ -48,11 +48,11 @@ void main() {
     });
 
     test('Format China mobile number with non-digit characters', () {
-      expect(chinaMobileCountry.formatMobile('86-138-1234-5678'), 
+      expect(chinaMobileCountry.formatMobile('86-138-1234-5678'),
           '(86) 138-12345678');
-      expect(chinaMobileCountry.formatMobile('+86 138 1234 5678'), 
+      expect(chinaMobileCountry.formatMobile('+86 138 1234 5678'),
           '(86) 138-12345678');
-      expect(chinaMobileCountry.formatMobile('86.138.1234.5678'), 
+      expect(chinaMobileCountry.formatMobile('86.138.1234.5678'),
           '(86) 138-12345678');
     });
 

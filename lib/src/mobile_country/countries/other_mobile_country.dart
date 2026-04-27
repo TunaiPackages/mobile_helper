@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class OtherMobileCountry extends MobileCountry {
+final class OtherMobileCountry extends MobileCountry {
+  static const OtherMobileCountry instance = OtherMobileCountry._();
+  const OtherMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     return mobile.length > 6;

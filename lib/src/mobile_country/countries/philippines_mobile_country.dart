@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class PhilippinesMobileCountry extends MobileCountry {
+final class PhilippinesMobileCountry extends MobileCountry {
+  static const PhilippinesMobileCountry instance = PhilippinesMobileCountry._();
+  const PhilippinesMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     // Regular expression for validating Philippine mobile numbers

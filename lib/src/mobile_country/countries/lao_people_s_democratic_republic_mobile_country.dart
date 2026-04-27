@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class LaoPeopleSDemocraticRepublicMobileCountry extends MobileCountry {
+final class LaoPeopleSDemocraticRepublicMobileCountry extends MobileCountry {
+  static const LaoPeopleSDemocraticRepublicMobileCountry instance = LaoPeopleSDemocraticRepublicMobileCountry._();
+  const LaoPeopleSDemocraticRepublicMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');

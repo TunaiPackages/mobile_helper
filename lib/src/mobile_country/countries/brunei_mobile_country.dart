@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class BruneiMobileCountry extends MobileCountry {
+final class BruneiMobileCountry extends MobileCountry {
+  static const BruneiMobileCountry instance = BruneiMobileCountry._();
+  const BruneiMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     // Regular expression to match Brunei mobile numbers.

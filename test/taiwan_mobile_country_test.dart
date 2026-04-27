@@ -4,7 +4,7 @@ import 'package:mobile_helper/src/mobile_country/base_mobile_country.dart';
 void main() {
   group('TaiwanMobileCountry Tests', () {
     // Create an instance of the TaiwanMobileCountry
-    final taiwanMobileCountry = TaiwanMobileCountry();
+    final taiwanMobileCountry = TaiwanMobileCountry.instance;
 
     test('Check valid Taiwan mobile number format', () {
       expect(taiwanMobileCountry.checkFormat('886912345678'), isTrue);

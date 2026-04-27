@@ -4,7 +4,7 @@ import 'package:mobile_helper/src/mobile_country/base_mobile_country.dart';
 void main() {
   group('EnglandMobileCountry Tests', () {
     // Create an instance of the EnglandMobileCountry
-    final englandMobileCountry = EnglandMobileCountry();
+    final englandMobileCountry = EnglandMobileCountry.instance;
 
     test('Check valid England mobile number format', () {
       expect(englandMobileCountry.checkFormat('447123456789'), isTrue);

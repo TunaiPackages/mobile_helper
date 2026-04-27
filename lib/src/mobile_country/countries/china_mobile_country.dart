@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class ChinaMobileCountry extends MobileCountry {
+final class ChinaMobileCountry extends MobileCountry {
+  static const ChinaMobileCountry instance = ChinaMobileCountry._();
+  const ChinaMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     // Regular expression to match Chinese mobile numbers.

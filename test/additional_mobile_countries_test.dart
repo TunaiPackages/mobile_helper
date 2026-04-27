@@ -7,8 +7,9 @@ void main() {
     test('all additional countries are registered explicitly', () {
       final countries = getMobileCountries();
       expect(countries.where((c) => c is OtherMobileCountry).length, 1);
-      expect(countries.length, 229);
+      expect(countries.length, 231);
       expect(countries.any((c) => c.name == 'Nigeria' && c.code == '234'), isTrue);
+      expect(countries.any((c) => c.name == 'Canada' && c.code == '1'), isTrue);
       expect(countries.any((c) => c.name == 'United States' && c.code == '1'), isTrue);
       expect(countries.any((c) => c.name == 'Japan' && c.code == '81'), isTrue);
     });

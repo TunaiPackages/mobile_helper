@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class ZimbabweMobileCountry extends MobileCountry {
+final class ZimbabweMobileCountry extends MobileCountry {
+  static const ZimbabweMobileCountry instance = ZimbabweMobileCountry._();
+  const ZimbabweMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     // Zimbabwe international format: 263 followed by 9 national digits.

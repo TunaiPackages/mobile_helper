@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class EnglandMobileCountry extends MobileCountry {
+final class EnglandMobileCountry extends MobileCountry {
+  static const EnglandMobileCountry instance = EnglandMobileCountry._();
+  const EnglandMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     // Regular expression to match English mobile numbers

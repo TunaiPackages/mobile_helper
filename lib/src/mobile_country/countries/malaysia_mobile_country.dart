@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class MalaysiaMobileCountry extends MobileCountry {
+final class MalaysiaMobileCountry extends MobileCountry {
+  static const MalaysiaMobileCountry instance = MalaysiaMobileCountry._();
+  const MalaysiaMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     // Regular expression to match Malaysian mobile numbers.

@@ -5,7 +5,7 @@ void main() {
   late BruneiMobileCountry bruneiMobileCountry;
 
   setUp(() {
-    bruneiMobileCountry = BruneiMobileCountry();
+    bruneiMobileCountry = BruneiMobileCountry.instance;
   });
 
   group('BruneiMobileCountry', () {

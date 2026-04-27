@@ -3,7 +3,7 @@ import 'package:mobile_helper/src/mobile_country/base_mobile_country.dart';
 
 void main() {
   group('HongKongMobileCountry Tests', () {
-    final hongKongMobileCountry = HongKongMobileCountry();
+    final hongKongMobileCountry = HongKongMobileCountry.instance;
 
     test('Check valid Hong Kong mobile number format', () {
       expect(hongKongMobileCountry.checkFormat('85291234567'), isTrue);
@@ -43,4 +43,3 @@ void main() {
     });
   });
 }
-

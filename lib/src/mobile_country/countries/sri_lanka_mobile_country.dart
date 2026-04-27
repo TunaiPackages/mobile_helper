@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class SriLankaMobileCountry extends MobileCountry {
+final class SriLankaMobileCountry extends MobileCountry {
+  static const SriLankaMobileCountry instance = SriLankaMobileCountry._();
+  const SriLankaMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     // Regular expression to match Sri Lankan mobile numbers.

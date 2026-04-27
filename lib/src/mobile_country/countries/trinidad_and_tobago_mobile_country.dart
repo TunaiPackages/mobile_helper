@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class TrinidadAndTobagoMobileCountry extends MobileCountry {
+final class TrinidadAndTobagoMobileCountry extends MobileCountry {
+  static const TrinidadAndTobagoMobileCountry instance = TrinidadAndTobagoMobileCountry._();
+  const TrinidadAndTobagoMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');

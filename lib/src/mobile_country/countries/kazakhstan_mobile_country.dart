@@ -1,23 +1,25 @@
 part of '../base_mobile_country.dart';
 
-class KazakhstanMobileCountry extends MobileCountry {
+final class KazakhstanMobileCountry extends MobileCountry {
+  static const KazakhstanMobileCountry instance = KazakhstanMobileCountry._();
+  const KazakhstanMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^7[0-9]{6,14}$').hasMatch(cleanMobile);
+    return RegExp(r'^7(6|7)[0-9]{9}$').hasMatch(cleanMobile);
   }
 
   @override
-  String get code => '7';
+  String get code => '76';
 
   @override
   String formatMobile(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    if (cleanMobile.isEmpty || cleanMobile.length <= 1) {
+    if (cleanMobile.isEmpty || cleanMobile.length <= 2) {
       return cleanMobile;
     }
 
-    final national = cleanMobile.substring(1);
+    final national = cleanMobile.substring(2);
     final firstChunkEnd = national.length > 3 ? 3 : national.length;
     final firstChunk = national.substring(0, firstChunkEnd);
     var formatted = '($code) $firstChunk';

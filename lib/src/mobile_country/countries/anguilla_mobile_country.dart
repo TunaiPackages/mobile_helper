@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class AnguillaMobileCountry extends MobileCountry {
+final class AnguillaMobileCountry extends MobileCountry {
+  static const AnguillaMobileCountry instance = AnguillaMobileCountry._();
+  const AnguillaMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');

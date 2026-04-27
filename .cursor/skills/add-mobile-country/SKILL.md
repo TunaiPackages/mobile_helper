@@ -20,10 +20,14 @@ Follow these repository conventions exactly:
 1. Country classes are `part of '../base_mobile_country.dart';`
 2. New country files live in `lib/src/mobile_country/countries/`
 3. `MobileCountry` registry is in `lib/src/mobile_country/base_mobile_country.dart`
-4. Do not remove or reorder existing behavior unless requested
-5. Keep fallback behavior (`OtherMobileCountry`) intact
-6. Ensure country `code` is unique among non-empty codes
-7. Ensure country `name` is unique
+4. Every country class must expose a canonical singleton:
+   - `static const <Country>MobileCountry instance = <Country>MobileCountry._();`
+   - `const <Country>MobileCountry._();`
+5. Register countries using `.instance` (never `new`/`()` in registry or fallbacks)
+6. Do not remove or reorder existing behavior unless requested
+7. Keep fallback behavior (`OtherMobileCountry`) intact
+8. Ensure country `code` is unique among non-empty codes
+9. Ensure country `name` is unique
 
 ## Required Workflow
 
@@ -48,6 +52,9 @@ Add Mobile Country Progress
 
 Create `lib/src/mobile_country/countries/<country>_mobile_country.dart`:
 - extend `MobileCountry`
+- add canonical singleton members:
+  - `static const <Country>MobileCountry instance = <Country>MobileCountry._();`
+  - `const <Country>MobileCountry._();`
 - implement:
   - `name`
   - `code` (digits only, no `+`)
@@ -66,7 +73,7 @@ Guidance:
 
 Update `lib/src/mobile_country/base_mobile_country.dart`:
 - add `part 'countries/<country>_mobile_country.dart';`
-- add `<Country>MobileCountry()` into `_mobileCountries`
+- add `<Country>MobileCountry.instance` into `_mobileCountries`
 
 Keep all existing countries and fallback country present.
 
@@ -99,6 +106,7 @@ Update `test/mobile_validator_test.dart` (or add equivalent coverage):
 - ensure `MobileValidator.getCountryFromMobile` returns the new country for prefix-matching input
 - ensure no regression for existing countries and fallback
 - ensure `MobileValidator.isValid` behavior is correct for at least one valid and one invalid number for the new country
+- ensure singleton usage remains consistent where asserted (for example `same(<Country>MobileCountry.instance)`)
 
 ## Robustness Checks (Mandatory)
 
@@ -108,6 +116,7 @@ Before finishing, verify:
   - if codes share prefixes, longer code must still resolve correctly
 - No duplicate country code among non-empty codes
 - No duplicate country name
+- New country is reachable via canonical singleton (`<Country>MobileCountry.instance`)
 - `checkFormat` and `formatMobile` do not contradict each other on valid inputs
 - `formatMobile` handles symbols/spaces safely
 - tests include edge lengths (too short/too long)

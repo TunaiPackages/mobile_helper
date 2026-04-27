@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class MacedoniaTheFormerYugoslavRepublicOfMobileCountry extends MobileCountry {
+final class MacedoniaTheFormerYugoslavRepublicOfMobileCountry extends MobileCountry {
+  static const MacedoniaTheFormerYugoslavRepublicOfMobileCountry instance = MacedoniaTheFormerYugoslavRepublicOfMobileCountry._();
+  const MacedoniaTheFormerYugoslavRepublicOfMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');

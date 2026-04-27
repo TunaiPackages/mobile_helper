@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class ThailandMobileCountry extends MobileCountry {
+final class ThailandMobileCountry extends MobileCountry {
+  static const ThailandMobileCountry instance = ThailandMobileCountry._();
+  const ThailandMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     // Regular expression to match Thai mobile numbers.

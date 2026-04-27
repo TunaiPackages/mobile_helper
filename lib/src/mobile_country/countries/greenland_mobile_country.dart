@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class GreenlandMobileCountry extends MobileCountry {
+final class GreenlandMobileCountry extends MobileCountry {
+  static const GreenlandMobileCountry instance = GreenlandMobileCountry._();
+  const GreenlandMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');

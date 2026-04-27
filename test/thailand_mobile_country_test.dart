@@ -4,7 +4,7 @@ import 'package:mobile_helper/src/mobile_country/base_mobile_country.dart';
 void main() {
   group('ThailandMobileCountry Tests', () {
     // Create an instance of the ThailandMobileCountry
-    final thailandMobileCountry = ThailandMobileCountry();
+    final thailandMobileCountry = ThailandMobileCountry.instance;
 
     test('Check valid Thailand mobile number format', () {
       expect(thailandMobileCountry.checkFormat('66812345678'), isTrue);

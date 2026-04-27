@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class TaiwanMobileCountry extends MobileCountry {
+final class TaiwanMobileCountry extends MobileCountry {
+  static const TaiwanMobileCountry instance = TaiwanMobileCountry._();
+  const TaiwanMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     // Regular expression to match Taiwan mobile numbers.

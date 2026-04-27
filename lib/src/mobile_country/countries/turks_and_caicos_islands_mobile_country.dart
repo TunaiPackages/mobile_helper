@@ -1,6 +1,8 @@
 part of '../base_mobile_country.dart';
 
-class TurksAndCaicosIslandsMobileCountry extends MobileCountry {
+final class TurksAndCaicosIslandsMobileCountry extends MobileCountry {
+  static const TurksAndCaicosIslandsMobileCountry instance = TurksAndCaicosIslandsMobileCountry._();
+  const TurksAndCaicosIslandsMobileCountry._();
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
