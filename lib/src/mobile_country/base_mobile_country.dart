@@ -38,12 +38,20 @@ sealed class MobileCountry extends Equatable {
   /// Asset file name under `assets/flags` (for example: `my.png`).
   String get flagAssetName;
 
-  Widget buildFlag({double size = 24}) => Image.asset(
-        'assets/flags/$flagAssetName',
-        package: 'mobile_helper',
-        width: size,
-        height: size,
-      );
+  Widget buildFlag({double size = 24}) {
+    if (flagAssetName.isEmpty) {
+      return _EmptyFlag(size: size);
+    }
+    return Image.asset(
+      'assets/flags/$flagAssetName',
+      package: 'mobile_helper',
+      width: size,
+      height: size,
+      errorBuilder: (context, error, stackTrace) {
+        return _EmptyFlag(size: size);
+      },
+    );
+  }
 
   @override
   List<Object> get props => [name, code];
@@ -66,3 +74,16 @@ final Set<MobileCountry> _mobileCountries = {
 };
 
 Set<MobileCountry> getMobileCountries() => _mobileCountries;
+
+class _EmptyFlag extends StatelessWidget {
+  final double size;
+  const _EmptyFlag({required this.size});
+
+  @override
+  Widget build(BuildContext context) {
+    return Icon(
+      Icons.public,
+      size: size,
+    );
+  }
+}

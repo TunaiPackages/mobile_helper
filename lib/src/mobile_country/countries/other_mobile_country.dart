@@ -18,5 +18,5 @@ class OtherMobileCountry extends MobileCountry {
   String get name => 'Other';
 
   @override
-  String get flagAssetName => 'zw.png';
+  String get flagAssetName => '';
 }
