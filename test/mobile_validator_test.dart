@@ -46,6 +46,10 @@ void main() {
         same(RussiaMobileCountry.instance),
       );
       expect(
+        MobileValidator.getCountryFromMobile('85284906043'),
+        same(HongKongMobileCountry.instance),
+      );
+      expect(
         MobileValidator.getCountryFromMobile('999123456'),
         isA<OtherMobileCountry>(),
       );
@@ -68,6 +72,10 @@ void main() {
       expect(MobileValidator.isValid('77123456789'), isTrue);
       expect(MobileValidator.isValid('77017432605'), isTrue);
       expect(MobileValidator.isValid('7712345678'), isFalse);
+      expect(MobileValidator.isValid('85284906043'), isTrue);
+      expect(MobileValidator.isValid('85246123456'), isTrue);
+      expect(MobileValidator.isValid('85270123456'), isTrue);
+      expect(MobileValidator.isValid('85221234567'), isFalse);
     });
   });
 
