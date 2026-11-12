@@ -36,6 +36,14 @@ class MobileValidator {
       return UnitedStatesMobileCountry.instance;
     }
 
+    // Russia and Kazakhstan share +7; the 76/77 range is Kazakhstan.
+    if (cleanMobile.startsWith('7')) {
+      if (cleanMobile.startsWith('76') || cleanMobile.startsWith('77')) {
+        return KazakhstanMobileCountry.instance;
+      }
+      return RussiaMobileCountry.instance;
+    }
+
     for (final country in _countriesByCodeLengthDesc) {
       if (country.code.length == 1 && cleanMobile.startsWith(country.code)) {
         return country;

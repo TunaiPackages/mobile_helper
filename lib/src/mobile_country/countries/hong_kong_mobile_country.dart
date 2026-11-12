@@ -5,8 +5,10 @@ final class HongKongMobileCountry extends MobileCountry {
   const HongKongMobileCountry._();
   @override
   bool checkFormat(String mobile) {
-    // Hong Kong mobile numbers typically start with the country code 852 and are followed by 8 digits that start with 5, 6, or 9
-    final RegExp hkMobilePattern = RegExp(r'^852[569]\d{7}$');
+    // Hong Kong mobile numbers are the country code 852 followed by 8 digits
+    // that start with 4 to 9. OFCA has also assigned mobile blocks starting
+    // with 4, 7 and 8 since 2018; 2 and 3 are fixed lines.
+    final RegExp hkMobilePattern = RegExp(r'^852[4-9]\d{7}$');
     return hkMobilePattern.hasMatch(mobile);
   }
 

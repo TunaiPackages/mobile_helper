@@ -38,8 +38,16 @@ void main() {
         same(KazakhstanMobileCountry.instance),
       );
       expect(
+        MobileValidator.getCountryFromMobile('77017432605'),
+        same(KazakhstanMobileCountry.instance),
+      );
+      expect(
         MobileValidator.getCountryFromMobile('79161234567'),
         same(RussiaMobileCountry.instance),
+      );
+      expect(
+        MobileValidator.getCountryFromMobile('85284906043'),
+        same(HongKongMobileCountry.instance),
       );
       expect(
         MobileValidator.getCountryFromMobile('999123456'),
@@ -61,17 +69,24 @@ void main() {
       expect(MobileValidator.isValid('26377123456'), isFalse);
       expect(MobileValidator.isValid('79161234567'), isTrue);
       expect(MobileValidator.isValid('76123456789'), isTrue);
-      expect(MobileValidator.isValid('77123456789'), isFalse);
+      expect(MobileValidator.isValid('77123456789'), isTrue);
+      expect(MobileValidator.isValid('77017432605'), isTrue);
+      expect(MobileValidator.isValid('7712345678'), isFalse);
+      expect(MobileValidator.isValid('85284906043'), isTrue);
+      expect(MobileValidator.isValid('85246123456'), isTrue);
+      expect(MobileValidator.isValid('85270123456'), isTrue);
+      expect(MobileValidator.isValid('85221234567'), isFalse);
     });
   });
 
   group('Country registry', () {
     test('country names are unique', () {
-      final names = getMobileCountries().map((country) => country.name).toList();
+      final names =
+          getMobileCountries().map((country) => country.name).toList();
       expect(names.toSet().length, names.length);
     });
 
-    test('non-empty country codes are unique except NANP shared code', () {
+    test('non-empty country codes are unique except shared +1 and +7', () {
       final nonEmptyCodes = getMobileCountries()
           .where((country) => country.code.isNotEmpty)
           .map((country) => country.code)
@@ -82,10 +97,12 @@ void main() {
       }
 
       expect(codeCounts['1'], 2);
-      final duplicatedNonNanpCodes = codeCounts.entries
-          .where((entry) => entry.key != '1' && entry.value > 1)
+      expect(codeCounts['7'], 2);
+      final duplicatedUnsharedCodes = codeCounts.entries
+          .where((entry) =>
+              entry.key != '1' && entry.key != '7' && entry.value > 1)
           .toList();
-      expect(duplicatedNonNanpCodes, isEmpty);
+      expect(duplicatedUnsharedCodes, isEmpty);
     });
   });
 }
