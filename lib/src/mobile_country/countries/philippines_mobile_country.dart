@@ -5,12 +5,11 @@ final class PhilippinesMobileCountry extends MobileCountry {
   const PhilippinesMobileCountry._();
   @override
   bool checkFormat(String mobile) {
-    // Regular expression for validating Philippine mobile numbers
-    RegExp philippinesPattern = RegExp(r'^(?:\+?63|0)?[0-9]{10}$');
-
-    // The pattern breakdown:
-    // ^(?:\+?63|0)? - Matches the optional country code '+63' or leading '0'.
-    // [0-9]{10}$ - Matches exactly 10 digits for the mobile number.
+    // Philippine mobiles are ten national digits after +63, starting with
+    // 9 (+63 917 123 4567), or 8 for a few ranges. The country code is
+    // required: with it optional, +63 and eight digits passed as ten
+    // digits and the phone pad stopped two digits short.
+    RegExp philippinesPattern = RegExp(r'^63[89]\d{9}$');
 
     return philippinesPattern.hasMatch(mobile);
   }

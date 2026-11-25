@@ -6,7 +6,7 @@ final class CuracaoMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^599[0-9]{6,12}$').hasMatch(cleanMobile);
+    return RegExp(r'^5999\d{7}$').hasMatch(cleanMobile);
   }
 
   @override

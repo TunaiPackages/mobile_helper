@@ -6,7 +6,7 @@ final class VenezuelaBolivarianRepublicOfMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^58[0-9]{6,13}$').hasMatch(cleanMobile);
+    return RegExp(r'^584\d{9}$').hasMatch(cleanMobile);
   }
 
   @override

@@ -6,7 +6,7 @@ final class FrenchSouthernTerritoriesMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^262[0-9]{6,12}$').hasMatch(cleanMobile);
+    return RegExp(r'^262[67]\d{8}$').hasMatch(cleanMobile);
   }
 
   @override

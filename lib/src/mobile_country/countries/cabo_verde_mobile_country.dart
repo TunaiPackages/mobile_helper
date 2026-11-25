@@ -6,7 +6,7 @@ final class CaboVerdeMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^238[0-9]{6,12}$').hasMatch(cleanMobile);
+    return RegExp(r'^238[359]\d{6}$').hasMatch(cleanMobile);
   }
 
   @override

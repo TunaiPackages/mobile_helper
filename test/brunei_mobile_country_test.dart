@@ -25,8 +25,8 @@ void main() {
 
       test('should return false for invalid Brunei numbers', () {
         expect(
-            bruneiMobileCountry.checkFormat('8123456'), isFalse); // Wrong start
-        expect(bruneiMobileCountry.checkFormat('6738123456'),
+            bruneiMobileCountry.checkFormat('6123456'), isFalse); // Wrong start
+        expect(bruneiMobileCountry.checkFormat('6736123456'),
             isFalse); // Wrong start after 673
         expect(bruneiMobileCountry.checkFormat('123456'), isFalse); // Too short
         expect(bruneiMobileCountry.checkFormat('773456'),
@@ -44,8 +44,8 @@ void main() {
       });
 
       test('should ignore invalid numbers and return as is', () {
-        expect(bruneiMobileCountry.formatMobile('8123456'),
-            '8123456'); // Invalid number
+        expect(bruneiMobileCountry.formatMobile('6123456'),
+            '6123456'); // Invalid number
         expect(
             bruneiMobileCountry.formatMobile('123456'), '123456'); // Too short
       });

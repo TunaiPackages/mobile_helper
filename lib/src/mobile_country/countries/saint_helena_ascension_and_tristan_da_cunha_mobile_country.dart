@@ -6,7 +6,7 @@ final class SaintHelenaAscensionAndTristanDaCunhaMobileCountry extends MobileCou
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^290[0-9]{6,12}$').hasMatch(cleanMobile);
+    return RegExp(r'^290[56]\d{4}$').hasMatch(cleanMobile);
   }
 
   @override

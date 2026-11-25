@@ -6,7 +6,7 @@ final class TuvaluMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^688[0-9]{6,12}$').hasMatch(cleanMobile);
+    return RegExp(r'^688(?:7\d{6}|9\d{5})$').hasMatch(cleanMobile);
   }
 
   @override

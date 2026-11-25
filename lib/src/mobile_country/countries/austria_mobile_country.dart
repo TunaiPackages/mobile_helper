@@ -6,7 +6,7 @@ final class AustriaMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^43[0-9]{6,13}$').hasMatch(cleanMobile);
+    return RegExp(r'^436\d{6,12}$').hasMatch(cleanMobile);
   }
 
   @override

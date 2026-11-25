@@ -6,7 +6,7 @@ final class ArubaMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^297[0-9]{6,12}$').hasMatch(cleanMobile);
+    return RegExp(r'^297[25-79]\d{6}$').hasMatch(cleanMobile);
   }
 
   @override

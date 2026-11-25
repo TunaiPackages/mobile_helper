@@ -6,7 +6,7 @@ final class AntarcticaMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^672[0-9]{6,12}$').hasMatch(cleanMobile);
+    return RegExp(r'^672[13]\d{5}$').hasMatch(cleanMobile);
   }
 
   @override

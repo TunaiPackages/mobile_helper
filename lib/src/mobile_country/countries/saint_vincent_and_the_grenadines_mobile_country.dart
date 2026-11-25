@@ -6,7 +6,7 @@ final class SaintVincentAndTheGrenadinesMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^1784[0-9]{6,11}$').hasMatch(cleanMobile);
+    return RegExp(r'^1784[2-9]\d{6}$').hasMatch(cleanMobile);
   }
 
   @override

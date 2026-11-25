@@ -104,7 +104,6 @@ part 'countries/guinea_mobile_country.dart';
 part 'countries/guinea_bissau_mobile_country.dart';
 part 'countries/guyana_mobile_country.dart';
 part 'countries/haiti_mobile_country.dart';
-part 'countries/heard_island_and_mcdonald_islands_mobile_country.dart';
 part 'countries/vatican_city_state_mobile_country.dart';
 part 'countries/honduras_mobile_country.dart';
 part 'countries/hungary_mobile_country.dart';
@@ -381,7 +380,6 @@ final Set<MobileCountry> _mobileCountries = {
   GuineaBissauMobileCountry.instance,
   GuyanaMobileCountry.instance,
   HaitiMobileCountry.instance,
-  HeardIslandAndMcdonaldIslandsMobileCountry.instance,
   VaticanCityStateMobileCountry.instance,
   HondurasMobileCountry.instance,
   HungaryMobileCountry.instance,

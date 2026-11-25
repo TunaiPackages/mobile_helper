@@ -5,11 +5,11 @@ final class MalaysiaMobileCountry extends MobileCountry {
   const MalaysiaMobileCountry._();
   @override
   bool checkFormat(String mobile) {
-    // Regular expression to match Malaysian mobile numbers.
-    // Malaysian mobile numbers typically start with 01X or 01Y followed by 7 digits.
-    // Additionally, if the number starts with 6011, it should have 11 digits in total.
+    // Malaysian mobiles are 01X plus seven digits (nine national digits),
+    // except 011, which always has eight, and 015, 018 and 019, which now
+    // have numbers with seven or eight (MCMC plan, as in libphonenumber).
     RegExp malaysiaPattern =
-        RegExp(r'^(601(?!1)[0-9]{1}[0-9]{7}|6011[0-9]{8})$');
+        RegExp(r'^60(?:1[02-467]\d{7}|11\d{8}|1[589]\d{7,8})$');
 
     // Check if the provided mobile number matches the Malaysian pattern.
     return malaysiaPattern.hasMatch(mobile);

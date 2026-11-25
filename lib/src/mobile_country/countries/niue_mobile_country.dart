@@ -6,7 +6,7 @@ final class NiueMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^683[0-9]{6,12}$').hasMatch(cleanMobile);
+    return RegExp(r'^683(?:[56]\d{3}|8\d{6})$').hasMatch(cleanMobile);
   }
 
   @override

@@ -6,7 +6,7 @@ final class PalestineStateOfMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^970[0-9]{6,12}$').hasMatch(cleanMobile);
+    return RegExp(r'^9705\d{8}$').hasMatch(cleanMobile);
   }
 
   @override

@@ -6,7 +6,7 @@ final class SaintPierreAndMiquelonMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^508[0-9]{6,12}$').hasMatch(cleanMobile);
+    return RegExp(r'^508(?:[2-689]\d{5}|70\d{4,7}|7[1-9]\d{4})$').hasMatch(cleanMobile);
   }
 
   @override

@@ -6,7 +6,7 @@ final class AndorraMobileCountry extends MobileCountry {
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^376[0-9]{6,12}$').hasMatch(cleanMobile);
+    return RegExp(r'^376(?:[35]\d{5}|6[0-8]\d{4}|69\d{4,7})$').hasMatch(cleanMobile);
   }
 
   @override

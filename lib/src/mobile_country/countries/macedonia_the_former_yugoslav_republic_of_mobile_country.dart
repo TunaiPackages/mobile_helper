@@ -6,7 +6,7 @@ final class MacedoniaTheFormerYugoslavRepublicOfMobileCountry extends MobileCoun
   @override
   bool checkFormat(String mobile) {
     final cleanMobile = mobile.replaceAll(RegExp(r'\D'), '');
-    return RegExp(r'^389[0-9]{6,12}$').hasMatch(cleanMobile);
+    return RegExp(r'^3897\d{7}$').hasMatch(cleanMobile);
   }
 
   @override

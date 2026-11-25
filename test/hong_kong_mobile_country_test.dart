@@ -12,8 +12,8 @@ void main() {
     });
 
     test('Check invalid Hong Kong mobile number format', () {
-      // Wrong digit after 852 (must be 5, 6, or 9)
-      expect(hongKongMobileCountry.checkFormat('85281234567'), isFalse);
+      // A landline: mobiles start 4 to 9, fixed lines 2 or 3
+      expect(hongKongMobileCountry.checkFormat('85221234567'), isFalse);
 
       // Wrong length
       expect(hongKongMobileCountry.checkFormat('8529123456'), isFalse);
@@ -29,8 +29,8 @@ void main() {
 
     test('Format returns original input for invalid input', () {
       expect(
-        hongKongMobileCountry.formatMobile('85281234567'),
-        '85281234567',
+        hongKongMobileCountry.formatMobile('85221234567'),
+        '85221234567',
       );
     });
 
